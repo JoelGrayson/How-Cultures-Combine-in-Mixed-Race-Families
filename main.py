@@ -16,6 +16,7 @@ mother_decrease_by=df.groupby(by='Mother Race')\
     ['ΔConnected to Mother Culture']
 
 decrease_by=pd.concat([father_decrease_by, mother_decrease_by], axis=1) #join father_decrease_by and mother_decrease_by on race
+print('-----Decreased By-----')
 print(decrease_by)
 
 
@@ -24,6 +25,7 @@ print(decrease_by)
 parent_combos=df.groupby(['Father Race', 'Mother Race']).size().reset_index(name='Count')
 parent_combos['Percent']=parent_combos['Count']*100/len(df)
 parent_combos.sort_values(by='Percent', ascending=False, inplace=True)
+print('-----Parent Combos-----')
 print(parent_combos)
 
 
